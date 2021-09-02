@@ -18,11 +18,11 @@ type SymbolTable interface {
 type OrderedSymbolTable interface {
 	SymbolTable
 
-	Min() Key
-	Max() Key
+	Min() (key Key, exists bool)
+	Max() (key Key, exists bool)
 
-	Floor(key Key) Key
-	Ceiling(key Key) Key
+	Floor(key Key) (Key, bool)
+	Ceiling(key Key) (Key, bool)
 
 	Rank(key Key) int
 	Select(k int) (key Key, exists bool)

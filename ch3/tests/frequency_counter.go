@@ -14,7 +14,7 @@ var minKeyLen = flag.Int("l", 8, "min length of key")
 
 func main() {
 	flag.Parse()
-	st := symboltable.NewSequentialSearchST()
+	st := symboltable.NewBinarySearchST(12000)
 	scanner := bufio.NewScanner(os.Stdin)
 	split := func(data []byte, atEOF bool) (advance int, token []byte, err error) {
 		advance, token, err = bufio.ScanWords(data, atEOF)
